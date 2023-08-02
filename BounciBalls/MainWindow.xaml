@@ -1,0 +1,41 @@
+﻿<Window x:Class="BounciBalls.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BounciBalls"
+        mc:Ignorable="d"
+        Title="Bouncing balls" Height="441" Width="762" MinHeight="450" MinWidth="800" MaxHeight="450" MaxWidth="800">
+    <Grid Background="#FF424242">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="237*"/>
+            <ColumnDefinition Width="81*"/>
+            <ColumnDefinition Width="82*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="23*"/>
+            <RowDefinition Height="23*"/>
+            <RowDefinition Height="145*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="BallsAreaGrid" Grid.Row="1" Background="Gainsboro" Margin="10,10,10,10" MouseUp="BallsAreaGrid_MouseUp" Grid.RowSpan="3">
+            <!--<Ellipse x:Name="BallProto" Height="76" Stroke="Black" Width="76" MouseUp="Ball_MouseUp" Fill="#FFB9B9B9" HorizontalAlignment="Left" VerticalAlignment="Top"/>-->
+        </Grid>
+        <Label x:Name="CountBallsLbl" Grid.Column="1" Content="Колличество шаров на экране: 0" VerticalAlignment="Center" Height="26" Grid.ColumnSpan="2" Margin="10,10,10,10"/>
+        <ComboBox x:Name="ColorBox" Grid.Column="2" Margin="33,12,19,12" Grid.Row="1">
+            <ComboBoxItem IsSelected="True" Content="Случайный"/>
+            <ComboBoxItem Content="Серый"/>
+            <ComboBoxItem Content="Красный"/>
+            <ComboBoxItem Content="желтый"/>
+        </ComboBox>
+        <Label Grid.Column="1" Content="Цвет" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Height="26" Width="36"/>
+        <Slider x:Name="MaxSizeSlider" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Width="120" Maximum="100" Minimum="10" ValueChanged="Slider_ValueChanged" Height="18"/>
+        <Label Grid.Column="1" Content="Максимальный размер" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Width="154" Height="26"/>
+        <Button x:Name="CleanAreaBtn" Grid.Column="2" Content="Очистить поле" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="144" Click="CleanAreaBtn_Click"/>
+        <Button x:Name="StartMoveBtn" Content="Начать движение" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top" Width="113" Click="StartMoveBtn_Click"/>
+        <Button x:Name="StopMoveBtn" Content="Остановить движение" HorizontalAlignment="Left" Margin="128,12,0,0" VerticalAlignment="Top" Click="StopMoveBtn_Click" IsEnabled="False"/>
+        <Button x:Name="MixColorsBtn" Grid.Column="1" Content="Взболтать цвета" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="142" Click="MixColorsBtn_Click"/>
+
+    </Grid>
+</Window>
+
